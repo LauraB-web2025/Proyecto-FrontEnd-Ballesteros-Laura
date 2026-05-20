@@ -1,4 +1,4 @@
-ALumna: BALLESTEROS, LAURA
+Alumna: BALLESTEROS, LAURA
 
 Éste es un proyecto realizado para el curso de Front-End de Talento Tech.
 
