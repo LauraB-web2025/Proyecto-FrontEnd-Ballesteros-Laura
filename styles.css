@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* TIPOGRAFÍA Google Fonts */
+.indie-flower-regular {
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+font-family: 'Indie Flower', sans-serif;
+background-color: rgb(211, 179, 141);
+}
+.color-tipografia {
+    color:rgb(255, 255, 255);
+}
+.centrado {
+    text-align: center;
+}
+.color-enlace {
+    color: rgb(155, 119, 72);
+}
+
+/* CENTRADO DE CONTENEDOR DE MULTIMEDIA */
+.video-img-container {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+    margin: 20px 0;          /* Espacio arriba y abajo del video */
+    width: 100%;             /* Ocupa todo el ancho */
+}
+/* Bordes redondeados img */
+#nuestrahistoria + .video-img-container img {
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+}
+/* Bordes redondeados para el Video */
+.video-img-container video {
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    overflow: hidden; 
+}
+
+/* HEADER*/
+header {
+    display: flex;
+    align-items: center;         /* Centrado vertical */
+    justify-content: space-between; /* Distribución del espacio */
+    padding: 10px 40px;          /* Margen interno para no tocar los bordes de la pantalla */
+    background-color: rgb(155, 119, 72);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra */
+}
+/* Menú de navegación (ul) HORIZONTAL */
+header nav ul {
+    display: flex;
+    gap: 20px;             /* Espaciado horizontal entre cada opción */
+    list-style: none;      /* Elimina puntos */
+}
+/* Estilo para enlaces del menú */
+header nav ul li a {
+    text-decoration: none;
+    color: #dac275;
+    font-weight: bold;
+}
+header nav ul li a:hover {
+    color: #000000;     
+}
+
+/*MAIN*/
+main {
+    padding: 20px 40px; 
+    width: 100%;
+    max-width: 1200px;  
+    margin: 0 auto;     
+}
+
+/* CARDS */
+.galeria-container {
+    display: flex;
+    flex-wrap: wrap;         
+    gap: 24px;               /* Espacio entre cards */
+    justify-content: center; /* Centrado de cards */
+    padding: 20px;
+}
+/* Estructura de cada card */
+.foto-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;        /* Cortado de bordes de la imagen */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    /* Configuración Flexbox */
+    flex: 1 1 300px;         
+    max-width: 380px;            
+    display: flex;
+    flex-direction: column;  /* Organizado de foto y texto vertical */
+}
+/* Contenedor de la foto para efectos */
+.foto-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+/* Comportamiento de la imagen */
+.foto-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* Ajusta la imagen sin deformarla */
+    cursor: pointer;         
+    transition: transform 0.3s ease; /* Suavizado de efecto zoom */
+}
+/* Efecto al pasar el mouse sobre la foto */
+.foto-wrapper img:hover {
+    transform: scale(1.05);  
+}
+/*  Comportamiento de bloque para el enlace */
+.foto-wrapper a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/* Textos e información de cards */
+.foto-info {
+    padding: 20px;
+    background-color: rgb(155, 119, 72);
+}
+.foto-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+    color: #000000;
+}
+.foto-info p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+/*<P>CONOCE SU GATONALIDAD*/
+.gatonalidad-texto {
+    font-size: 1.25rem;
+    line-height: 1.6; /* Espacio entre líneas */
+    max-width: 800px; 
+    margin: 15px auto; /* Centrado */
+}
+
+/*FORMULARIO*/
+form {
+    width: 90%;             
+    max-width: 650px;       
+    margin: 30px auto;      
+    padding: 25px;          
+    border-radius: 12px;    
+}
+/* Fondo blanco y sombra (fieldset) */
+form:has(fieldset) {
+    background-color: #ffffff; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+/* Estilo */
+fieldset {
+    border: 2px solid rgb(155, 119, 72); /* Línea del borde del color del header */
+    border-radius: 8px;
+    padding: 20px;
+}
+/* Estilo para título (COMPLETA TUS DATOS) */
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: rgb(155, 119, 72);
+}
+/* (Labels y campos) */
+form div {
+    display: flex;
+    flex-direction: column; /* Pregunta arriba-caja de texto abajo */
+    gap: 8px;               /* Espacio entre pregunta y casillero */
+}
+/* Estilo para campos de entrada, listas desplegables y áreas de texto */
+form input, 
+form select, 
+form textarea {
+    width: 100%;            
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Indie Flower', sans-serif; 
+    font-size: 1rem;
+}
+/* Cambio de color al hacer click */
+form input:focus, 
+form select:focus, 
+form textarea:focus {
+    outline: none;
+    border-color: rgb(155, 119, 72);
+}
+
+/*BOTONES*/
+button {
+    font-family: 'Indie Flower', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 25px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    
+    /* Color marrón y texto blanco */
+    background-color: rgb(155, 119, 72); 
+    color: white;
+}
+/* Botón "Limpiar" (gris) */
+button[type="reset"] {
+    background-color: #e0e0e0;
+    color: #333;
+}
+/* Efecto al pasar el mouse por encima */
+button:hover {
+    opacity: 0.9;
+    background-color: rgb(130, 95, 55);
+}
+
+/*FOOTER*/
+footer {
+    padding: 30px 40px; 
+    background-color: rgb(155, 119, 72); 
+    margin-top: 40px;   
+}
+/* Contenedor para centrar el mapa */
+.mapa-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    width: 100%;
+}
+/* Adaptado de mapa a pantallas de celulares */
+.mapa-container iframe {
+    width: 100%;          
+    max-width: 600px;     
+    height: 300px;        
+    border-radius: 12px;  
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+}
+/* Íconos */
+i {
+font-size: 40px;
+color: rgb(130, 95, 55);
+}
+/* Quita subrayado y líneas de los enlaces */
+footer a {
+    text-decoration: none;
+    display: inline-block; 
+}
+/* Efecto al pasar el mouse por los iconos */
+footer a i {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+footer a:hover i {
+    transform: scale(1.1);   /* Agranda el ícono un 10% */
+    color: #dac275;        /* Amarillo pastel al pasar el cursor */
+}
