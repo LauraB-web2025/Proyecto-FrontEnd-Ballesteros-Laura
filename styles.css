@@ -6,9 +6,9 @@
 
 /* TIPOGRAFÍA Google Fonts */
 .indie-flower-regular {
-  font-family: "Indie Flower", cursive;
-  font-weight: 400;
-  font-style: normal;
+font-family: "Indie Flower", cursive;
+font-weight: 400;
+font-style: normal;
 }
 body {
 font-family: 'Indie Flower', sans-serif;
@@ -27,10 +27,10 @@ background-color: rgb(211, 179, 141);
 /* CENTRADO DE CONTENEDOR DE MULTIMEDIA */
 .video-img-container {
     display: flex;
-    justify-content: center; /* Centrado horizontal */
-    align-items: center;     /* Centrado vertical */
-    margin: 20px 0;          /* Espacio arriba y abajo del video */
-    width: 100%;             /* Ocupa todo el ancho */
+    justify-content: center; 
+    align-items: center;     
+    margin: 20px 0;         
+    width: 100%;             
 }
 /* Bordes redondeados img */
 #nuestrahistoria + .video-img-container img {
@@ -44,20 +44,27 @@ background-color: rgb(211, 179, 141);
     overflow: hidden; 
 }
 
-/* HEADER*/
+/* HEADER */
 header {
     display: flex;
-    align-items: center;         /* Centrado vertical */
-    justify-content: space-between; /* Distribución del espacio */
-    padding: 10px 40px;          /* Margen interno para no tocar los bordes de la pantalla */
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 40px;
     background-color: rgb(155, 119, 72);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: relative; 
+    width: 100%;
+    box-sizing: border-box;
+}
+.header-titulos {
+    text-align: center;
+    margin-bottom: 15px;
 }
 /* Menú de navegación (ul) HORIZONTAL */
 header nav ul {
     display: flex;
-    gap: 20px;             /* Espaciado horizontal entre cada opción */
-    list-style: none;      /* Elimina puntos */
+    gap: 20px;             
+    list-style: none;      
 }
 /* Estilo para enlaces del menú */
 header nav ul li a {
@@ -69,7 +76,96 @@ header nav ul li a:hover {
     color: #000000;     
 }
 
-/*MAIN*/
+/* MENÚ DE NAVEGACIÓN EN PC */
+header nav {
+    width: 100%;
+}
+header nav ul {
+    display: flex;
+    justify-content: center; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px; 
+}
+
+/* BOTÓN HAMBURGUESA */
+.menu-toggle {
+    display: none; 
+    background-color: rgb(130, 95, 55);
+    border: 2px solid #dac275;
+    border-radius: 50%; 
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+.menu-toggle i {
+    font-size: 24px;
+    color: #dac275;
+}
+
+/* ESTADO FLOTANTE BOTÓN */
+.menu-toggle.sticky-toggle {
+    display: flex; 
+    position: fixed;
+    bottom: 30px;  
+    right: 30px;
+    animation: aparecer 0.3s ease forwards;
+}
+@keyframes aparecer {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* MENÚ DESPLEGABLE (tarjeta flotante) */
+header nav ul.floating-menu {
+    position: fixed;
+    bottom: 100px; 
+    right: 30px;
+    flex-direction: column;
+    background-color: rgb(130, 95, 55);
+    padding: 20px;
+    border-radius: 12px;
+    gap: 15px;
+    text-align: right;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+    z-index: 999;
+    width: auto;
+    min-width: 200px;
+}
+
+/* MEDIA QUERY (Celulares) */
+@media (max-width: 850px) {
+    .menu-toggle {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+    header nav ul {
+        display: none;
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        flex-direction: column;
+        background-color: rgb(130, 95, 55);
+        padding: 20px;
+        border-radius: 12px;
+        gap: 15px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+        z-index: 999;
+    }
+    header nav ul.open {
+        display: flex;
+    }
+}
+
+/* MAIN */
 main {
     padding: 20px 40px; 
     width: 100%;
@@ -81,8 +177,8 @@ main {
 .galeria-container {
     display: flex;
     flex-wrap: wrap;         
-    gap: 24px;               /* Espacio entre cards */
-    justify-content: center; /* Centrado de cards */
+    gap: 24px;               
+    justify-content: center; 
     padding: 20px;
 }
 /* Estructura de cada card */
@@ -95,21 +191,19 @@ main {
     flex: 1 1 300px;         
     max-width: 380px;            
     display: flex;
-    flex-direction: column;  /* Organizado de foto y texto vertical */
+    flex-direction: column;  
 }
-/* Contenedor de la foto para efectos */
 .foto-wrapper {
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
 }
-/* Comportamiento de la imagen */
 .foto-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;       /* Ajusta la imagen sin deformarla */
+    object-fit: cover;       
     cursor: pointer;         
-    transition: transform 0.3s ease; /* Suavizado de efecto zoom */
+    transition: transform 0.3s ease; 
 }
 /* Efecto al pasar el mouse sobre la foto */
 .foto-wrapper img:hover {
@@ -138,15 +232,15 @@ main {
     line-height: 1.5;
 }
 
-/*<P>CONOCE SU GATONALIDAD*/
+/* <P>CONOCE SU GATONALIDAD */
 .gatonalidad-texto {
     font-size: 1.25rem;
-    line-height: 1.6; /* Espacio entre líneas */
+    line-height: 1.6; 
     max-width: 800px; 
-    margin: 15px auto; /* Centrado */
+    margin: 15px auto; 
 }
 
-/*FORMULARIO*/
+/* FORMULARIO */
 form {
     width: 90%;             
     max-width: 650px;       
@@ -161,7 +255,7 @@ form:has(fieldset) {
 }
 /* Estilo */
 fieldset {
-    border: 2px solid rgb(155, 119, 72); /* Línea del borde del color del header */
+    border: 2px solid rgb(155, 119, 72); 
     border-radius: 8px;
     padding: 20px;
 }
@@ -174,8 +268,8 @@ legend {
 /* (Labels y campos) */
 form div {
     display: flex;
-    flex-direction: column; /* Pregunta arriba-caja de texto abajo */
-    gap: 8px;               /* Espacio entre pregunta y casillero */
+    flex-direction: column; 
+    gap: 8px;              
 }
 /* Estilo para campos de entrada, listas desplegables y áreas de texto */
 form input, 
@@ -223,13 +317,12 @@ button:hover {
     background-color: rgb(130, 95, 55);
 }
 
-/*FOOTER*/
+/* FOOTER */
 footer {
     padding: 30px 40px; 
     background-color: rgb(155, 119, 72); 
     margin-top: 40px;   
 }
-/* Contenedor para centrar el mapa */
 .mapa-container {
     display: flex;
     justify-content: center;
@@ -260,6 +353,470 @@ footer a i {
     transition: transform 0.2s ease;
 }
 footer a:hover i {
-    transform: scale(1.1);   /* Agranda el ícono un 10% */
-    color: #dac275;        /* Amarillo pastel al pasar el cursor */
+    transform: scale(1.1);   
+    color: #dac275;        
+}
+
+/* CARRITO */
+        
+        /* Botón de Carrito Flotante (Huella) */
+        .cart-float-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: rgb(155, 119, 72);
+            color: white;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            border: 3px solid #dac275;
+        }
+        .cart-float-btn:hover {
+            transform: scale(1.1) rotate(-10deg);
+            background-color: rgb(130, 95, 55);
+        }
+        .cart-float-btn i {
+            color: white;
+            font-size: 28px;
+        }
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #e05e5e;
+            color: white;
+            font-family: 'Indie Flower', sans-serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        /* Panel Lateral Carrito */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -450px; 
+            width: 420px;
+            max-width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.25);
+            z-index: 1000;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            border-left: 6px solid rgb(155, 119, 72);
+        }
+        .cart-sidebar.open {
+            right: 0;
+        }       
+        /* Overlay oscuro para fondo */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.4);
+            z-index: 999;
+            display: none;
+            backdrop-filter: blur(2px);
+        }
+        .cart-overlay.active {
+            display: block;
+        }
+        /* Estructura del Carrito */
+        .cart-header {
+            padding: 20px;
+            background-color: rgb(155, 119, 72);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #dac275;
+        }
+        .cart-header h2 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        .cart-close-btn {
+            background: none;
+            border: none;
+            color: #dac275;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: none;
+            padding: 0;
+            margin: 0;
+        }
+        .cart-close-btn:hover {
+            color: white;
+            transform: scale(1.1);
+            background: none;
+        }
+        /* Lista de productos del Carrito */
+        .cart-items-container {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #fbf8f3;
+        }       
+        /* Tarjeta de ítem dentro del carrito */
+        .cart-item {
+            background: white;
+            border: 2px solid #ecdcc9;
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .cart-item-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid rgb(155, 119, 72);
+        }
+        .cart-item-details {
+            flex-grow: 1;
+        }
+        .cart-item-name {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 2px;
+        }
+        .cart-item-price {
+            font-size: 0.95rem;
+            color: rgb(130, 95, 55);
+        }
+        .cart-item-subtotal {
+            font-size: 1rem;
+            font-weight: bold;
+            color: rgb(155, 119, 72);
+            margin-top: 3px;
+        }
+        .cart-item-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccd;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .quantity-btn {
+            background: #f0e6da;
+            color: #333;
+            border: none;
+            width: 25px;
+            height: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            box-shadow: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .quantity-btn:hover {
+            background-color: #dac275;
+        }
+        .quantity-val {
+            padding: 0 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #333;
+        }
+        .delete-item-btn {
+            background: none;
+            border: none;
+            color: #e05e5e;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            box-shadow: none;
+            transition: transform 0.2s;
+        }
+        .delete-item-btn:hover {
+            color: #b33e3e;
+            transform: scale(1.15);
+            background: none;
+        }
+        .delete-item-btn i {
+            font-size: 18px;
+            color: inherit;
+        }
+        /* Mensaje de Carrito Vacío */
+        .cart-empty-message {
+            text-align: center;
+            margin: auto 0;
+            color: #8c7355;
+            padding: 20px;
+        }
+        .cart-empty-message i {
+            font-size: 60px;
+            margin-bottom: 15px;
+            color: #dac275;
+        }
+        .cart-empty-message p {
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+        /* Resumen y Totales del Carrito */
+        .cart-footer {
+            padding: 20px;
+            background: #ffffff;
+            border-top: 3px solid #dac275;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px dashed #ecdcc9;
+            padding-bottom: 10px;
+        }
+        .cart-total-price {
+            color: rgb(155, 119, 72);
+            font-size: 1.7rem;
+        }
+        .cart-checkout-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: rgb(155, 119, 72);
+            color: white;
+            font-size: 1.3rem;
+            margin: 0;
+            border-radius: 8px;
+        }
+        .cart-clear-btn {
+            width: 100%;
+            background-color: #e05e5e;
+            color: white;
+            font-size: 1rem;
+            padding: 8px;
+            margin: 0;
+            border-radius: 8px;
+        }
+        .cart-clear-btn:hover {
+            background-color: #b33e3e;
+        }
+        /* Notificaciones Tipo Miau */
+        .miau-toast {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            background-color: #ffffff;
+            border-left: 6px solid #dac275;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            padding: 15px 25px;
+            border-radius: 8px;
+            z-index: 2000;
+            font-family: 'Indie Flower', sans-serif;
+            font-size: 1.2rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateX(200%);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-width: 320px;
+        }
+        .miau-toast.show {
+            transform: translateX(0);
+        }
+        .miau-toast i {
+            font-size: 25px;
+            color: rgb(155, 119, 72);
+        }
+
+        /* DONACIONES */
+        .donaciones-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .donacion-item {
+            background-color: #ffffff;
+            border: 2px dashed rgb(155, 119, 72);
+            border-radius: 12px;
+            padding: 15px;
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .donacion-item i {
+            font-size: 45px;
+            color: rgb(155, 119, 72);
+        }
+        .donacion-item h4 {
+            font-size: 1.3rem;
+            margin: 0;
+            color: #333;
+        }
+        .donacion-item p {
+            font-size: 0.95rem;
+            color: #666;
+            margin: 0;
+        }
+        .donacion-item .precio {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: rgb(130, 95, 55);
+        }
+        .apadrinar-btn {
+            width: 100%;
+            margin: 0;
+            padding: 8px 15px;
+            background-color: #dac275;
+            color: #000;
+        }
+        .apadrinar-btn:hover {
+            background-color: rgb(155, 119, 72);
+            color: white;
+        }
+
+/* COMPORTAMIENTO PARA CELULARES */
+@media (max-width: 768px) {
+    #open-cart-btn, 
+    .cart-float-btn {
+        position: fixed;
+        bottom: 25px;
+        right: 35px;
+        left: auto;
+        z-index: 9999;
+        
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Menú fijo arriba del carrito en celulares */
+    #menu-toggle,
+    .menu-toggle.sticky-toggle {
+        position: fixed;
+        bottom: 100px; 
+        right: 25px;
+        left: auto;
+        z-index: 9998;        
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* COMPORTAMIENTO MENÚ PARA COMPUTADORAS */
+@media (min-width: 769px) {
+    #open-cart-btn, 
+    .cart-float-btn {
+        position: fixed;
+        bottom: 25px;
+        right: 35px;
+        z-index: 9999;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Botón del menú oculto en PC */
+    html body #menu-toggle,
+    html body .menu-toggle {
+        display: none; 
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: scale(0.8);
+    }
+    /* Aparición del botón flotante MENÚ en PC */
+    html body #menu-toggle.desktop-floating-active,
+    html body .menu-toggle.desktop-floating-active {
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+        position: fixed;
+        bottom: 100px; /* Alineado verticalmente arriba del carrito */
+        right: 25px;
+        left: auto;
+        z-index: 9998;
+        width: 55px;
+        height: 55px;
+        align-items: center;
+        justify-content: center;
+    }
+    #nav-menu {
+        position: static; 
+        display: flex; 
+    }
+
+    /* Panel lateral colapsable */
+    #menu-toggle.desktop-floating-active ~ #nav-menu,
+    #menu-toggle.desktop-floating-active ~ * #nav-menu,
+    .desktop-floating-active ~ #nav-menu {
+        position: fixed;
+        top: 0;
+        right: -300px; 
+        width: 300px;
+        height: 100vh;
+        background-color: rgb(130, 95, 55); 
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9997;
+        display: flex;
+    }
+    /* Menú lateral del botón flotante */
+    #menu-toggle.desktop-floating-active ~ #nav-menu.open,
+    #menu-toggle.desktop-floating-active ~ * #nav-menu.open,
+    .desktop-floating-active ~ #nav-menu.open {
+        right: 0;
+    }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +7,32 @@
     <!--ÍCONO DE LA PESTAÑA DEL NAVEGADOR-->
     <link rel="shortcut icon" href="IMÁGENES/logorefugiomiau.png">
     <!--ÍCONOS (REDES) DEL FOOTER-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!--TIPOGRAFÍA Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
     <!--CSS EXTERNO-->
     <link rel="stylesheet" href="styles.css">
+    <!--JAVASCRIPT-->
+    <script src="script.js" defer></script>
 </head>
 <body class="indie-flower-regular">
     <header> 
-            <!--LOGO-->
-            <img src="IMÁGENES/logorefugiomiau.png" alt="Logo" width="200" height="200">
-            <!--ENCABEZADO-->
-            <div class="header-titulos">
+        <!--LOGO-->
+        <img src="IMÁGENES/logorefugiomiau.png" alt="Logo" width="200" height="200">
+        <!--ENCABEZADO-->
+        <div class="header-titulos">
             <h1 class="centrado">RESCATANDO ALMAS DE CUATRO PATAS</h1>
             <h2 class="centrado color-tipografia">Adoptá un peludito</h2>
-            </div>       
+        </div>       
         <br>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
         <nav><!--MENÚ DE NAVEGACIÓN-->
-            <ul>
-                <li><a href="">Inicio</a></li>
+            <ul id="nav-menu">
+                <li><a href="#">Inicio</a></li>
                 <li><a href="#nuestrahistoria">Nuestra historia</a></li>
                 <li><a href="#adopciones">Michis en adopción</a></li>
                 <li><a href="#reseñas">Reseñas de adoptados</a></li>
@@ -63,87 +68,129 @@
                 <section class="galeria-seccion">
                 <div class="galeria-container">
             <!-- Card de SAORI OMMI -->
-            <div class="foto-card">
+            <div class="foto-card" data-id="michi-saori" data-name="Saori Ommi" data-price="2500" data-img="https://placehold.co/400x400/f39c12/ffffff?text=Saori+Ommi">
                 <div class="foto-wrapper card-imagen">
                     <a href="saoriommi.html" target="_blank" title="Ver más sobre Saori Ommi">
                         <img src="IMÁGENES/saoriommi.png" alt="Saori Ommi">
                     </a>
                 </div>
                 <div class="foto-info">
+                    <div>
                     <h3 class="centrado">Saori Ommi</h3>
-                    <p class="centrado">Descubre su gatonalidad.</p>
+                    <p class="centrado">Es super juguetona y mimosa.</p>
+                    <button class="add-to-cart-btn apadrinar-btn">
+                        <i class="fa-solid fa-heart" style="font-size: 16px; color: white; margin-right: 5px;"></i>
+                        Apadrinar ($2500)
+                    </button>
+                    </div>
                 </div>
             </div>
             <!-- Card de LA MICHITA CHAPACHITA -->
-            <div class="foto-card">
+            <div class="foto-card" data-id="michi-chapachita" data-name="Michita Chapachita" data-price="2500" data-img="https://placehold.co/400x400/e67e22/ffffff?text=Michita">
                 <div class="foto-wrapper">
                     <a href="lamichitachapachita.html" target="_blank" title="Ver más sobre La Michita Chapachita">
                         <img src="IMÁGENES/lamichitachapachita.png" alt="La Michita Chapachita">
                     </a>
                 </div>
                 <div class="foto-info">
+                    <div>
                     <h3 class="centrado">La Michita Chapachita</h3>
-                    <p class="centrado">Descubre su gatonalidad.</p>
+                    <p class="centrado">Dormilona profesional.</p>
+                    <button class="add-to-cart-btn apadrinar-btn">
+                        <i class="fa-solid fa-heart" style="font-size: 16px; color: white; margin-right: 5px;"></i>
+                        Apadrinar ($2500)
+                    </button>
+                    </div>
                 </div>
             </div>
             <!-- Card de GIZMO -->
-            <div class="foto-card">
+            <div class="foto-card" data-id="michi-gizmo" data-name="Gizmo" data-price="2500" data-img="https://placehold.co/400x400/3498db/ffffff?text=Gizmo">
                 <div class="foto-wrapper">
                     <a href="gizmo.html" target="_blank" title="Ver más sobre Gizmo">
                         <img src="IMÁGENES/gizmo.png" alt="Gizmo">
                     </a>
                 </div>
                 <div class="foto-info">
+                    <div>
                     <h3 class="centrado">Gizmo</h3>
-                    <p class="centrado">Descubre su gatonalidad.</p>
+                    <p class="centrado">Valiente y saltarín.</p>
+                    <button class="add-to-cart-btn apadrinar-btn">
+                        <i class="fa-solid fa-heart" style="font-size: 16px; color: white; margin-right: 5px;"></i>
+                        Apadrinar ($2500)
+                    </button>
+                    </div>
                 </div>
             </div>
             <!-- Card de MORTY -->
-            <div class="foto-card">
+            <div class="foto-card" data-id="michi-morty" data-name="Morty" data-price="2500" data-img="https://placehold.co/400x400/2ecc71/ffffff?text=Morty">
                 <div class="foto-wrapper">
                     <a href="morty.html" target="_blank" title="Ver más sobre Morty">
                         <img src="IMÁGENES/morty.png" alt="Morty">
                     </a>
                 </div>
                 <div class="foto-info">
+                    <div>
                     <h3 class="centrado">Morty</h3>
-                    <p class="centrado">Descubre su gatonalidad.</p>
+                    <p class="centrado">Un explorador curioso.</p>
+                    <button class="add-to-cart-btn apadrinar-btn">
+                        <i class="fa-solid fa-heart" style="font-size: 16px; color: white; margin-right: 5px;"></i>
+                        Apadrinar ($2500)
+                    </button>
+                    </div>
                 </div>
             </div>
             <!-- Card de SIMONA --> 
-            <div class="foto-card">
+            <div class="foto-card" data-id="michi-simona" data-name="Simona" data-price="2500" data-img="https://placehold.co/400x400/9b59b6/ffffff?text=Simona">
                 <div class="foto-wrapper">
                     <a href="simona.html" target="_blank" title="Ver más sobre Simona">
                         <img src="IMÁGENES/simona.png" alt="Simona">
                     </a>
                 </div>
                 <div class="foto-info">
+                    <div>
                     <h3 class="centrado">Simona</h3>
-                    <p class="centrado">Descubre su gatonalidad.</p>
+                    <p class="centrado">Es dulce como la miel.</p>
+                    <button class="add-to-cart-btn apadrinar-btn">
+                        <i class="fa-solid fa-heart" style="font-size: 16px; color: white; margin-right: 5px;"></i>
+                        Apadrinar ($2500)
+                    </button>
+                    </div>
                 </div>
             </div>
             <!-- Card de JERRY -->
-            <div class="foto-card">
+            <div class="foto-card" data-id="michi-jerry" data-name="Jerry" data-price="2500" data-img="https://placehold.co/400x400/1abc9c/ffffff?text=Jerry">
                 <div class="foto-wrapper">
                     <a href="jerry.html" target="_blank" title="Ver más sobre Jerry">
                         <img src="IMÁGENES/jerry.png" alt="Jerry">
                     </a>
                 </div>
                 <div class="foto-info">
+                    <div>
                     <h3 class="centrado">Jerry</h3>
-                    <p class="centrado">Descubre su gatonalidad.</p>
+                    <p class="centrado">Charlatán y mimoso.</p>
+                    <button class="add-to-cart-btn apadrinar-btn">
+                        <i class="fa-solid fa-heart" style="font-size: 16px; color: white; margin-right: 5px;"></i>
+                        Apadrinar ($2500)
+                    </button>
+                    </div>
                 </div>
             </div>
             <!-- Card de AMBAR Y MIGUEL -->
-            <div class="foto-card">
+            <div class="foto-card" data-id="michi-ambarymiguel" data-name="Ambar y Miguel" data-price="4000" data-img="https://placehold.co/400x400/34495e/ffffff?text=Ambar+Y+Miguel">
                 <div class="foto-wrapper">
                     <a href="ambarymiguel.html" target="_blank" title="Ver más sobre Ambar y Miguel">
                         <img src="IMÁGENES/ambarymiguel.png" alt="Ambar y Miguel">
                     </a>
                 </div>
                 <div class="foto-info">
+                    <div>
                     <h3 class="centrado">Ambar y Miguel</h3>
-                    <p class="centrado">Descubre su gatonalidad.</p>
+                    <p class="centrado">Hermanos inseparables.</p>
+                    <button class="add-to-cart-btn apadrinar-btn">
+                        <i class="fa-solid fa-heart-crack" style="font-size: 16px; color: white; margin-right: 5px;"></i>
+                        Apadrinar Dúo ($4000)
+                    </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -157,16 +204,70 @@
             <br>
             <article><!--RESEÑAS-->
                 <h2 id="reseñas" class="centrado">Reseñas/Adoptados</h2>
+                <p class="centrado" style="color: white; font-size: 1.3rem;">"Adoptar a Petupi cambió mi vida. ¡Es la reina de la casa!" - Lucas G.</p>
             </article>
         </section>
         <br>
         <section>
             <article><!--DONACIONES-->
                 <h2 id="donaciones" class="centrado">Donaciones</h2>
+                <h3 class="centrado" style="color: #ffffff; margin-bottom: 20px;">Ayudanos a seguir asistiendo a decenas de gatitos desamparados. ¡Suma tu miau-granito de arena al carrito!</h3>
+                <div class="donaciones-grid">
+                    <!--Producto Donación 1-->
+                    <div class="donacion-item" data-id="donar-alimento" data-name="Plato de Alimento" data-price="800" data-img="https://placehold.co/100x100/9b7748/ffffff?text=Alimento">
+                        <i class="fa-solid fa-bowl-food"></i>
+                        <h4>Plato de Alimento</h4>
+                        <p>Asegura una rica cena para un gatito por un día.</p>
+                        <span class="precio">$1000</span>
+                        <button class="add-to-cart-btn apadrinar-btn">Suma Plato</button>
+                    </div>
+                    <!--Producto Donación 2-->
+                    <div class="donacion-item" data-id="donar-vacuna" data-name="Vacuna Triple Felina" data-price="3500" data-img="https://placehold.co/100x100/9b7748/ffffff?text=Vacuna">
+                        <i class="fa-solid fa-syringe"></i>
+                        <h4>Vacuna Triple Felina</h4>
+                        <p>Inmunidad indispensable para los michis rescatados.</p>
+                        <span class="precio">$5000</span>
+                        <button class="add-to-cart-btn apadrinar-btn">Suma Vacuna</button>
+                    </div>
+                    <!--Producto Donación 3-->
+                    <div class="donacion-item" data-id="donar-juguete" data-name="Juguete de Ratón" data-price="600" data-img="https://placehold.co/100x100/9b7748/ffffff?text=Juguete">
+                        <i class="fa-solid fa-baseball"></i>
+                        <h4>Juguete Divertido</h4>
+                        <p>Estimulación y felicidad en su estadía en el refugio.</p>
+                        <span class="precio">$600</span>
+                        <button class="add-to-cart-btn apadrinar-btn">Suma Juguete</button>
+                    </div>
+                </div>
             </article>
             <br>
             <article><!--AYUDALOS-->
                 <h2 id="ayudalos" class="centrado">Ayudalos</h2>
+                <!--Formulario de voluntariado-->
+                <form action="https://formspree.io/f/mlgzypzg" method="POST" onsubmit="event.preventDefault(); customSubmit();">
+                    <fieldset>
+                        <legend>¡Inscríbete para ser Voluntario!</legend>
+                        <br>
+                        <div>
+                            <label for="nombre">Nombre Completo:</label>
+                            <input type="text" name="nombre" placeholder="Ingresa tu nombre..." required>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="email">Tu Correo Electrónico:</label>
+                            <input type="email" name="email" placeholder="ejemplo@miau.com" required>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="motivo">¿Por qué deseas ayudar en el refugio?</label>
+                            <textarea name="motivo" rows="4" placeholder="Cuéntanos un poquito de tu amor por los michis..." required></textarea>
+                        </div>
+                        <br>
+                        <div style="flex-direction: row; justify-content: center; gap: 15px;">
+                            <button type="submit">Enviar Solicitud</button>
+                            <button type="reset">Limpiar</button>
+                        </div>
+                    </fieldset>
+                </form>
             </article>
         </section>
     </main>
@@ -195,5 +296,51 @@
         <br><br>
         <h5 class="centrado">Derechos de autor © 2026 - Laura Ballesteros</h5>
     </footer>
+
+    <!--ELEMENTOS DEL CARRITO (SIDEBAR, BOTÓN FLOTANTE Y NOTIFICACIONES)-->
+    <!-- Botón Flotante (huella) para abrir el Carrito -->
+    <div class="cart-float-btn" id="open-cart-btn" title="Ver mi ayuda acumulada">
+        <i class="fa-solid fa-paw"></i>
+        <div class="cart-badge" id="cart-counter">0</div>
+    </div>
+    <!-- Overlay de Fondo Oscuro -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <!-- Barra Lateral (Sidebar) del Carrito -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Mi Ayuda MIAU</h2>
+            <button class="cart-close-btn" id="close-cart-btn">
+                <i class="fa-solid fa-square-xmark" style="font-size: 30px; color: inherit;"></i>
+            </button>
+        </div>
+    <!-- Contenedor de productos del carrito -->
+        <div class="cart-items-container" id="cart-items-list">
+            <!-- Mensaje carrito vacío -->
+            <div class="cart-empty-message" id="cart-empty-message">
+                <i class="fa-solid fa-cat"></i>
+                <p>Tu carrito de miau-ayuda está vacío en este momento.</p>
+                <p style="font-size: 1rem; margin-top: 10px; color: #888;">¡Selecciona una donación o apadrina a un gatito para comenzar!</p>
+            </div>
+        </div>
+    <!-- Resumen de totales del Carrito -->
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Monto Total:</span>
+                <span class="cart-total-price" id="cart-total-price">$0</span>
+            </div>
+            <button class="cart-checkout-btn" onclick="checkoutMiau()">
+                <i class="fa-solid fa-hand-holding-heart" style="font-size: 18px; color: white; margin-right: 8px;"></i>
+                Confirmar Donación
+            </button>
+            <button class="cart-clear-btn" id="clear-cart-action">
+                Vaciar Carrito de Ayuda
+            </button>
+        </div>
+    </div>
+    <!-- Alertas Flotantes "Miau Toast" -->
+    <div class="miau-toast" id="miau-toast">
+        <i class="fa-solid fa-paw"></i>
+        <span id="toast-text">¡Miau! Acción completada</span>
+    </div>
 </body>
 </html>
